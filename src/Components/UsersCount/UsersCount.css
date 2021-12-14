@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+.userscount_views_total_title {
+  font-family: "Nunito", sans-serif;
+}
+.userscount_views_card_view {
+  margin-right: 2%;
+  width: 200px;
+  background: #fafafa;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12),
+    0px 2px 4px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+}
+.userscount_views_total_title_text {
+  font-size: 15px;
+  text-align: left;
+  padding-top: 5%;
+  padding-left: 5%;
+  user-select: none;
+}
+.userscount_views_total_title_value {
+  text-align: left;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 75px;
+  line-height: 102px;
+  padding-left: 5%;
+  padding-right: 5%;
+  user-select: none;
+}

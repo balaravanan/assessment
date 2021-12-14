@@ -1,0 +1,22 @@
+.dashboard_container {
+  padding: 3%;
+}
+.dashboard_dashboard_heading {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  user-select: none;
+}
+.dashboard_views_card {
+  display: flex;
+  flex-direction: row;
+}
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
