@@ -1,0 +1,7 @@
+.prograssbar-bar {
+  box-sizing: border-box;
+  border: 5px solid chartreuse;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}

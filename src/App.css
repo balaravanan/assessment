@@ -1,3 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://1stwebdesigner.com/wp-content/uploads/2019/07/css-background-effects-thumb.jpg");
+  flex-direction: column;
+}
+
+.main-header{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.create-form label{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px !important;
+}
+
+.kili{
+  background-color: #04AA6D;
+  color: #ffffff;
+  border-color: #04AA6D;
+  border-radius: 10%;
+  height: 50px;
+  width: 80px;
+}
+
+.sidebsr{
+  width: 300px;
+  height: 45em;
+}
+/* 
+.card{
+background-color: antiquewhite;
+} */
+.Sidefull{
+  opacity: 0.6;
+}
+
+.card{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  user-select: none;
+}
+
+.hearder{
+  user-select: none;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 1.5px; */
+}
+
+.borderdown{
+  
+  width: 200px;
+}
+
 .button_container {
   margin-top: 3%;
   font-family: "Nunito", sans-serif;
@@ -9,4 +69,21 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   border: none;
+  margin-left: 40%;
+}
+
+.FASED{
+  opacity: 0.6;
+  font-weight: bold;
+}
+
+.headingpro{
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  user-select: none;
+  padding-top: 20px;
+  padding-left: 20px;
 }

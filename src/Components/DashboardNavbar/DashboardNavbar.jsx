@@ -8,7 +8,9 @@ export default function DashboardNavbar() {
   const [ActivateAllUsers, setActivateAllUsers] = useState(true);
   const [ActivateTrainee, setActivateTrainee] = useState(false);
   const [ActivateCandidate, setActivateCandidate] = useState(false);
-
+  const [activeuserdata, setActiveuserdata] = useState(["", ""]);
+  const [traineedata, setTraineedata] = useState([]);
+  const [candidatedata, setCandidatedata] = useState([]);
   return (
     <>
       <div className="dashboardnavbar_container">
@@ -72,41 +74,28 @@ export default function DashboardNavbar() {
         <div className="dashboardnavbar_navbar_line"></div>
       </div>
       <div className="dashboardnavbar_card">
-          <table className="dashboardnavbar_card_menu">
-            <thead className="dashboardnavbar_card_menubar">
-            <tr >
-              <th className="dashboardnavbar_card_menu_items" >NAme</th>
-              <th className="dashboardnavbar_card_menu_items" >type</th>
-              <th className="dashboardnavbar_card_menu_items" >Date</th>
-              <th className="dashboardnavbar_card_menu_items" >status</th>
-              <th className="dashboardnavbar_card_menu_items" >assigned by</th>
-              <th className="dashboardnavbar_card_menu_items" ></th>
+        <table className="dashboardnavbar_card_menu">
+          <thead className="dashboardnavbar_card_menubar">
+            <tr>
+              <th className="dashboardnavbar_card_menu_items">NAme</th>
+              <th className="dashboardnavbar_card_menu_items">type</th>
+              <th className="dashboardnavbar_card_menu_items">Date</th>
+              <th className="dashboardnavbar_card_menu_items">status</th>
+              <th className="dashboardnavbar_card_menu_items">assigned by</th>
+              <th className="dashboardnavbar_card_menu_items"></th>
             </tr>
-            </thead>
-            <tbody className="dashboardnavbar_card_menu_body">
-            
-            { ActivateCandidate && 
-            <>
-            <DashboardCardData />
-            <DashboardCardData />
-            <DashboardCardData />
-            <DashboardCardData />
-            <DashboardCardData />
-            <DashboardCardData />
-            <DashboardCardData />
-            <DashboardCardData />
-            <DashboardCardData />
-            </>
-         } 
-          { ActivateAllUsers && 
-            <DashboardCardData />
-         } 
-         {  ActivateTrainee  && 
-            <DashboardCardData />
-         } 
-</tbody>
-          </table>
-          </div>
+          </thead>
+          <tbody className="dashboardnavbar_card_menu_body">
+            {ActivateCandidate && (
+              <>
+                <DashboardCardData data={candidatedata} />
+              </>
+            )}
+            {ActivateAllUsers && <DashboardCardData data={activeuserdata} />}
+            {ActivateTrainee && <DashboardCardData data={traineedata} />}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }
