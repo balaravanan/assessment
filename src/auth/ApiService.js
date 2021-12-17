@@ -17,7 +17,7 @@ export default {
     return response.data;
   },
   get_user_type: async (data) => {
-    const response = await axios.get(`${url}/user/admin/allUsers`, {
+    const response = await axios.get(`${url}/user/admin/allUserType`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: localStorage.getItem("token"),
@@ -36,4 +36,24 @@ export default {
     console.log(response);
     return response.data;
   },
+  trainee_task_board: async (data) => {
+    const response = await axios.get(`${url}/user/candidate/tasks`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+      data,
+    });
+    return response.data;
+  },
+  // user_type_dropdown: async (data) => {
+  //   const response = await axios.get(`${url}/user/admin/allUserType`, {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: localStorage.getItem("token"),
+  //     },
+  //     data,
+  //   });
+  //   return response.data;
+  // },
 };

@@ -1,16 +1,14 @@
 import React from 'react'
-import TraineeNavbar from './TraineeNavbar'
 import "./DashTraine1.css";
+import Trainee_Dashboard from './Trainee_Dashboard/Trainee_Dashboard';
 
 function DashTraine1() {
     return (
         <div>
-             <div className="dashboard_container">
-      <p className="dashboard_dashboard_heading">Dashboard</p>
+             
       <div className="dashboard_views_card">
       </div>
-      <TraineeNavbar/>
-    </div>
+      <Trainee_Dashboard/>
     </div>
 
     )

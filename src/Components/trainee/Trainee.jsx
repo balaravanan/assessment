@@ -1,22 +1,23 @@
 import React from 'react'
 import Header from '../header/Header'
-import Sidehi from '../Sidehi'
-import AddingUser from './AddingUser'
+import TraineeSide1 from '../TraineeSide1'
+import DashTraine1 from './DashTraine1'
+import "@coreui/coreui/dist/css/coreui.min.css";
 
-function UserAdd() {
+function Trainee() {
     return (
         <div>
             <Header/>
        <div class="row align-items-start">
     <div class="col-md-3" >
-        <Sidehi/>
+        <TraineeSide1/>
     </div>
     <div class="col-md-9" style={{marginLeft:"-3em"}}>
-        <AddingUser/>
+        <DashTraine1/>
     </div>
     </div>
     </div>
     )
 }
 
-export default UserAdd
+export default Trainee

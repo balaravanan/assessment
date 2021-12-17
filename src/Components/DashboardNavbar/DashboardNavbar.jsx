@@ -8,7 +8,7 @@ export default function DashboardNavbar() {
   const [ActivateAllUsers, setActivateAllUsers] = useState(true);
   const [ActivateTrainee, setActivateTrainee] = useState(false);
   const [ActivateCandidate, setActivateCandidate] = useState(false);
-  const [activeuserdata, setActiveuserdata] = useState(["", ""]);
+  const [activeuserdata, setActiveuserdata] = useState([]);
   const [traineedata, setTraineedata] = useState([]);
   const [candidatedata, setCandidatedata] = useState([]);
   return (

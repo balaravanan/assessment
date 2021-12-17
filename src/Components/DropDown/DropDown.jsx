@@ -1,6 +1,8 @@
 import React from "react";
 import "./DropDown.css";
 export default function DropDown({ width, getfun, addfun, data }) {
+  console.log("data", data);
+
   return (
     <select
       style={{ minWidth: width }}
@@ -17,7 +19,7 @@ export default function DropDown({ width, getfun, addfun, data }) {
       {data &&
         data.map((data) => {
           return (
-            <option value={data.code && data.code}>
+            <option value={data._id && data._id}>
               {data.userType && data.userType}
             </option>
           );

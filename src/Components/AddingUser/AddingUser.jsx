@@ -1,12 +1,19 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import "./AddingUser.css";
 import FormInput from "../FormInput/FormInput";
+import Api from "../../auth/ApiService";
 export default function AddingUser() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [userType, setUserType] = useState("");
   const [reportingTo, setReportingTo] = useState("");
+  const [userTypes, setuserTypes] = useState([]);
+  useEffect(() => {
+    Api.get_user_type().then((data) => {
+      setuserTypes(data.userType);
+    });
+  }, []);
   const UserName = useCallback((value) => {
     setUserName(value);
   }, []);
@@ -23,45 +30,6 @@ export default function AddingUser() {
     setReportingTo(value);
   }, []);
 
-  const type = [
-    {
-      userType: "admin",
-      code: "ADMIN@1",
-      active: true,
-      createdAt: {
-        $date: "2021-12-13T10:48:27.401Z",
-      },
-      updatedAt: {
-        $date: "2021-12-13T10:48:27.401Z",
-      },
-      __v: 0,
-    },
-
-    {
-      userType: "trainee",
-      code: "TRAINEE@1",
-      active: true,
-      createdAt: {
-        $date: "2021-12-13T10:48:54.687Z",
-      },
-      updatedAt: {
-        $date: "2021-12-13T10:48:54.687Z",
-      },
-      __v: 0,
-    },
-    {
-      userType: "candidate",
-      code: "CANDIDATE@1",
-      active: true,
-      createdAt: {
-        $date: "2021-12-13T10:49:08.738Z",
-      },
-      updatedAt: {
-        $date: "2021-12-13T10:49:08.738Z",
-      },
-      __v: 0,
-    },
-  ];
   console.log({
     userName,
     email,
@@ -87,7 +55,7 @@ export default function AddingUser() {
           dropdown={true}
           getfun={userType}
           addfun={UserType}
-          data={type}
+          data={userTypes}
         />
         <FormInput
           label={"Email"}

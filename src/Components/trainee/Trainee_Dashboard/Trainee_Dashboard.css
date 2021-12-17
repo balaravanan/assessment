@@ -1,0 +1,52 @@
+.dashboard_container {
+  padding: 3%;
+}
+.dashboard_dashboard_heading {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  user-select: none;
+}
+.dashboard_dashboard_heading-1 {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  user-select: none;
+  cursor: pointer;
+}
+
+
+.dashboard_dashboard_heading-2 {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  user-select: none;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.dashboard_views_card {
+  display: flex;
+  flex-direction: row;
+}
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.drop_report{
+  display: flex;
+  justify-content: space-between;
+  }
+
+  .tasboa{
+    display: flex;
+  }
