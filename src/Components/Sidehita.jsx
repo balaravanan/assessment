@@ -5,10 +5,10 @@ import file from "../images/file.png";
 import browser from "../images/upload-file.png";
 import user from "../images/user.png";
 import "@coreui/coreui/dist/css/coreui.min.css";
-// import { useHistory } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 
 function Sidehita(props) {
-  const history = useHistory("");
+  const navigate  = useNavigate ("");
 
   const [dash, setDash] = useState(false);
   const [task, setTask] = useState(true);
@@ -22,7 +22,7 @@ function Sidehita(props) {
     setPort(false);
     setBowser(false);
     setUse(false);
-    history.push("/admin/dashboard");
+    navigate("/admin/dashboard");
   };
 
   const ask = () => {
@@ -31,7 +31,7 @@ function Sidehita(props) {
     setPort(false);
     setBowser(false);
     setUse(false);
-    history.push("/task");
+    navigate("/task");
   };
 
   const trop = () => {
@@ -40,7 +40,7 @@ function Sidehita(props) {
     setPort(true);
     setBowser(false);
     setUse(false);
-    history.push("/sa");
+    navigate("/sa");
   };
 
   const reswob = () => {
@@ -49,7 +49,7 @@ function Sidehita(props) {
     setPort(false);
     setBowser(true);
     setUse(false);
-    history.push("/contuploa");
+    navigate("/contuploa");
   };
 
   const resu = () => {
@@ -58,7 +58,7 @@ function Sidehita(props) {
     setPort(false);
     setBowser(false);
     setUse(true);
-    history.push("/ga");
+    navigate("/ga");
   };
   return (
     <div>

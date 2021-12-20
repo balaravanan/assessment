@@ -1,20 +1,19 @@
 import React from "react";
 import "./AddAccount.css";
 import FormInput from "../FormInput/FormInput";
+import Button from "../Button";
 
 export default function AddAccount() {
   return (
     <div className="userupdation_container">
-      <p className="userupdation_userupdation_heading">
-        master &nbsp;admin&nbsp;details
-      </p>
+      <p className="userupdation_userupdation_heading">master &nbsp;admin&nbsp;details</p>
       <div className="userupdation_form_container">
         <FormInput
           label={"Name"}
           placeholder={"your name goes here"}
           dropdown={false}
         />
-
+      
         <FormInput
           label={"Email"}
           placeholder={"your email goes here"}
@@ -27,7 +26,7 @@ export default function AddAccount() {
           dropdown={false}
         />
 
-        <button>Add</button>
+        <Button/>
       </div>
     </div>
   );

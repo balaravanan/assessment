@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import dashboard from "../images/dashboard(1).png";
 import fileq from "../images/self-growth.png";
 import "@coreui/coreui/dist/css/coreui.min.css";
-// import { useHistory } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 
 function TraineeSide1() {
-  const history = useHistory("");
+  const navigate  = useNavigate ("");
 
   const [dash, setDash] = useState(true);
   const [task, setTask] = useState(false);
@@ -14,14 +14,14 @@ function TraineeSide1() {
     setDash(true);
     setTask(false);
 
-    history.push("/candidash");
+    navigate("/candidash");
   };
 
   const askbul = () => {
     setDash(false);
     setTask(true);
 
-    history.push("/progressioo");
+    navigate("/progressioo");
   };
 
   return (
