@@ -2,11 +2,11 @@ import React, { useState, useContext } from "react";
 import Logo from "./Logo";
 import "./Login.css";
 import Api from "../../auth/ApiService";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { UserContext } from "../../App";
 function Login() {
-  const history = useHistory();
+  // const history = useHistory();
   const [user, setUser] = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

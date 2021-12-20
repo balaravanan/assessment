@@ -4,7 +4,7 @@ import searchingIcon from "../../assets/searching.png";
 import addIcon from "../../assets/round-add-button.png";
 import DashboardCardData from "../DashboardCardData/DashboardCardData";
 
-export default function DashboardNavbar() {
+export default function DashboardNavbar(props) {
   const [ActivateAllUsers, setActivateAllUsers] = useState(true);
   const [ActivateTrainee, setActivateTrainee] = useState(false);
   const [ActivateCandidate, setActivateCandidate] = useState(false);
@@ -60,7 +60,7 @@ export default function DashboardNavbar() {
               <div>Candidate</div>
             </div>
             <div className="dashboardnavbar_menu_item-button dashboardnavbar_menu_item_button_add-user">
-              <div>
+              <div onClick={() => props.active()}>
                 Add User
                 <img
                   src={addIcon}

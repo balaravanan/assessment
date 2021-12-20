@@ -5,7 +5,7 @@ import { UserContext } from "../../App";
 function Header() {
   const [user, setUser] = useContext(UserContext);
   const [logout, setLogout] = useState(false);
-  console.log(user);
+  
   return (
     <div className="hearder">
       <div

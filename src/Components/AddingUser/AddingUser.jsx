@@ -77,9 +77,7 @@ export default function AddingUser() {
           getfun={reportingTo}
           addfun={ReportingTo}
         />
-        <div style={{ textAlign: "center" }}>
-          <button className="button_container">Confirm</button>
-        </div>
+        <button className="button_container">Confirm</button>
       </div>
     </div>
   );

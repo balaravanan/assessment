@@ -5,11 +5,10 @@ import file from "../images/file.png";
 import browser from "../images/upload-file.png";
 import user from "../images/user.png";
 import "@coreui/coreui/dist/css/coreui.min.css";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 function Sidehire() {
-    
-  const history = useHistory('');
+  const history = useHistory("");
 
   const [dash, setDash] = useState(false);
   const [task, setTask] = useState(false);
@@ -23,7 +22,7 @@ function Sidehire() {
     setPort(false);
     setBowser(false);
     setUse(false);
-    history.push("/bar");
+    history.push("/admin/dashboard");
   };
 
   const ask = () => {
@@ -49,6 +48,7 @@ function Sidehire() {
     setPort(false);
     setBowser(true);
     setUse(false);
+    history.push("/contuploa");
   };
 
   const resu = () => {
@@ -59,27 +59,31 @@ function Sidehire() {
     setUse(true);
     history.push("/ga");
   };
-    return (
-        <div>
-             <div
+  return (
+    <div>
+      <div
         className="card"
         style={{
           width: "300px",
           height: "40em",
           marginLeft: "1em",
-          marginTop:"1em",
+          marginTop: "1em",
           borderRadius: "15px",
           // borderRight: "1px solid #d7c9c9",
         }}
       >
         <div className="card-body">
-
           {dash && (
             <div>
-
               <>
-                <div style={{ marginLeft: "2em", paddingTop: "6em", cursor: "pointer" }}>
-                  <div onClick={board }>
+                <div
+                  style={{
+                    marginLeft: "2em",
+                    paddingTop: "6em",
+                    cursor: "pointer",
+                  }}
+                >
+                  <div onClick={board}>
                     <img src={dashboard} alt="" width={25} />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span>
@@ -87,63 +91,95 @@ function Sidehire() {
                     </span>
                   </div>
 
-                  <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={ask}>
+                  <div
+                    style={{ paddingTop: "2em" }}
+                    className="Sidefull"
+                    onClick={ask}
+                  >
                     <img src={file} alt="" width={25} />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span>Task Management</span>
                   </div>
 
-                  <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={trop}>
+                  <div
+                    style={{ paddingTop: "2em" }}
+                    className="Sidefull"
+                    onClick={trop}
+                  >
                     <img src={report} alt="" width={25} />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span>Report</span>
                   </div>
 
-                  <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={reswob}>
+                  <div
+                    style={{ paddingTop: "2em" }}
+                    className="Sidefull"
+                    onClick={reswob}
+                  >
                     <img src={browser} alt="" width={25} />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span>Content Uploading</span>
                   </div>
 
-                  <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={resu}>
+                  <div
+                    style={{ paddingTop: "2em" }}
+                    className="Sidefull"
+                    onClick={resu}
+                  >
                     <img src={user} alt="" width={25} />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span>Account</span>
                   </div>
                 </div>
-
               </>
             </div>
           )}
 
-
           {task && (
             <div>
-
-              <div style={{ marginLeft: "2em", paddingTop: "6em", cursor: "pointer" }}>
+              <div
+                style={{
+                  marginLeft: "2em",
+                  paddingTop: "6em",
+                  cursor: "pointer",
+                }}
+              >
                 <div className="Sidefull" onClick={board}>
                   <img src={dashboard} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    Dashboard
-                  </span>
+                  <span>Dashboard</span>
                 </div>
                 <div style={{ paddingTop: "2em" }} onClick={ask}>
                   <img src={file} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span> <b>Task Management</b></span>
+                  <span>
+                    {" "}
+                    <b>Task Management</b>
+                  </span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={trop}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={trop}
+                >
                   <img src={report} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Report</span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={reswob}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={reswob}
+                >
                   <img src={browser} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Content Uploading</span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={resu}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={resu}
+                >
                   <img src={user} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Account</span>
@@ -154,16 +190,23 @@ function Sidehire() {
 
           {port && (
             <div>
-
-              <div style={{ marginLeft: "2em", paddingTop: "6em", cursor: "pointer" }}>
+              <div
+                style={{
+                  marginLeft: "2em",
+                  paddingTop: "6em",
+                  cursor: "pointer",
+                }}
+              >
                 <div className="Sidefull" onClick={board}>
                   <img src={dashboard} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    Dashboard
-                  </span>
+                  <span>Dashboard</span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={ask}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={ask}
+                >
                   <img src={file} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Task Management</span>
@@ -171,14 +214,25 @@ function Sidehire() {
                 <div style={{ paddingTop: "2em" }} onClick={trop}>
                   <img src={report} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span> <b>Report</b></span>
+                  <span>
+                    {" "}
+                    <b>Report</b>
+                  </span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={reswob}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={reswob}
+                >
                   <img src={browser} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Content Uploading</span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={resu}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={resu}
+                >
                   <img src={user} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Account</span>
@@ -187,24 +241,34 @@ function Sidehire() {
             </div>
           )}
 
-
           {bowser && (
             <div>
-
-              <div style={{ marginLeft: "2em", paddingTop: "6em", cursor: "pointer" }}>
+              <div
+                style={{
+                  marginLeft: "2em",
+                  paddingTop: "6em",
+                  cursor: "pointer",
+                }}
+              >
                 <div className="Sidefull" onClick={board}>
                   <img src={dashboard} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    Dashboard
-                  </span>
+                  <span>Dashboard</span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={ask}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={ask}
+                >
                   <img src={file} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Task Management</span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={trop}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={trop}
+                >
                   <img src={report} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Report</span>
@@ -212,9 +276,16 @@ function Sidehire() {
                 <div style={{ paddingTop: "2em" }} onClick={reswob}>
                   <img src={browser} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span> <b>Content Uploading</b></span>
+                  <span>
+                    {" "}
+                    <b>Content Uploading</b>
+                  </span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={resu}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={resu}
+                >
                   <img src={user} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Account</span>
@@ -223,29 +294,43 @@ function Sidehire() {
             </div>
           )}
 
-
           {use && (
             <div>
-
-              <div style={{ marginLeft: "2em", paddingTop: "6em", cursor: "pointer" }}>
+              <div
+                style={{
+                  marginLeft: "2em",
+                  paddingTop: "6em",
+                  cursor: "pointer",
+                }}
+              >
                 <div className="Sidefull" onClick={board}>
                   <img src={dashboard} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    Dashboard
-                  </span>
+                  <span>Dashboard</span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={ask}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={ask}
+                >
                   <img src={file} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Task Management</span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={trop}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={trop}
+                >
                   <img src={report} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Report</span>
                 </div>
-                <div style={{ paddingTop: "2em" }} className="Sidefull" onClick={reswob}>
+                <div
+                  style={{ paddingTop: "2em" }}
+                  className="Sidefull"
+                  onClick={reswob}
+                >
                   <img src={browser} alt="" width={25} />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>Content Uploading</span>
@@ -260,11 +345,10 @@ function Sidehire() {
               </div>
             </div>
           )}
-
         </div>
       </div>
-        </div>
-    )
+    </div>
+  );
 }
 
-export default Sidehire
+export default Sidehire;
