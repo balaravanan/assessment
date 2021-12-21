@@ -1,44 +1,23 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useEffect } from "react";
 import Logo from "./Logo";
 import "./Login.css";
 import Api from "../../auth/ApiService";
 import { useNavigate  } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { UserContext } from "../../App";
+import cfunction from "../../Constant/ConstantFunction";
 
 function Login() {
   const navigate  = useNavigate ();
   const [user, setUser] = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const loginSuccess = () =>
-    toast.success("Login Success", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-
-
-  const loginFail = () =>
-    toast.error("Please Enter your Correct Email or Password", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const res = Api.login({ email, password })
       .then((response) => {
-        loginSuccess();
+        cfunction.loginSuccess();
         localStorage.setItem("token", response.token);
         localStorage.setItem("user", JSON.stringify(response.user));
         localStorage.setItem("userType", response.user.userTypeId.userType);
@@ -49,14 +28,25 @@ function Login() {
           } else if (response.user.userTypeId.userType === "admin") {
             navigate("/admin/dashboard");
           } else if (response.user.userTypeId.userType === "candidate") {
-            navigate("/trainer/dashboard");
+            navigate("/trainee/dashboard");
           }
         }, 2000);
       })
       .catch((error) => {
-        loginFail();
+        cfunction.loginFail();
       });
   };
+  useEffect(() => {
+    Api.find_user_type().then((res) => {
+        if(res){
+          navigate(`/${res}/dashboard`);
+        }else if(res === undefined){
+          Api.remove_local_storage();
+           Api.something_wrong();
+          navigate("/");
+        }
+      });
+  }, [])
   return (
     <>
       <ToastContainer />

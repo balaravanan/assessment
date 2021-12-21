@@ -69,7 +69,6 @@ function TraineeSide(props) {
               </>
             </div>
           )}
-
           {task && (
             <div>
               <div

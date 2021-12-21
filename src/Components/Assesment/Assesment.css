@@ -56,3 +56,6 @@
   border-radius: 10px;
   background-color: rgb(123, 228, 19);
 }
+.ui-dialog-titlebar-close {
+    visibility: hidden;
+}

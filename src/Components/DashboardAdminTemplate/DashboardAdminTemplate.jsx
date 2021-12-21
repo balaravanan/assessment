@@ -10,7 +10,8 @@ import accountImg from "../../images/user.png";
 import Dashboard from "../Dashboard/Dashboard";
 import Managetask from "../taskmangaement/Managetask";
 import { UserContext } from "../../App";
-
+import {toast} from "react-toastify";
+import Api from "../../auth/ApiService"
 export default function DashboardAdminTemplate(props) {
   let navigate = useNavigate();
   const [dash, setDash] = useState(true);
@@ -60,6 +61,18 @@ export default function DashboardAdminTemplate(props) {
     setBowser(false);
     setUse(true);
   };
+    useEffect(() => {
+      Api.find_user_type().then((res) => {
+        if(res){
+          navigate(`/${res}`);
+        }else if(res === undefined){
+          Api.remove_local_storage();
+           Api.something_wrong();
+          navigate("/");
+        }
+      });
+    }, []);
+
 
   return (
     <>

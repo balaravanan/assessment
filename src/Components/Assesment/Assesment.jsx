@@ -1,19 +1,24 @@
-import React from "react";
+import React,{useCallback,useState,useEffect} from "react";
 import "./Assesment.css";
 import time from "../../assets/stopwatch.png";
 import Countdown from "react-countdown";
 import RadioQuestion from "../RadioQuestion/RadioQuestion";
 import $ from "jquery";
 import { useFullScreen } from "react-browser-hooks";
+import Api from "../../auth/ApiService";
 export default function Assesment() {
   const { toggle, fullScreen } = useFullScreen();
-
+  const [question, setQuestions] = React.useState([]);
   function disableF5(e) {
-    if ((e.which || e.keyCode) === 116) e.preventDefault();
+    if (e.which || e.keyCode === 27) e.preventDefault();
   }
+ 
   $(document).keydown(function (e) {
-    if (e.keyCode === 27) return false;
+    if(e.key == "F11"){  e.preventDefault(); }
   });
+
+
+// if(ev.keyCode===27||ev.keyCode===122) return false
   $(document).bind("keydown", disableF5);
   $(document).on("keydown", disableF5);
   const renderer = ({ hours, minutes, seconds, completed }) => {
@@ -26,7 +31,39 @@ export default function Assesment() {
         </span>
       );
     }
-  };
+  };                                              
+                                            //  e.target.value,item.subjectTypeId,item._id,item.questionTypeId,option.option     
+  const submitSingleQuestion = useCallback((value,subjectTypeId,questionId,questionTypeId,stringanswer) => {
+   
+    var today = new Date();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    const data =  { subjectTypeId,
+  questionTypeId,
+        questionId,
+time,
+  answer:[
+    {
+    _id:value,
+    answer:stringanswer
+    }
+]}
+console.log(data)
+    Api.postQuestion(data).then(res => {
+      console.log(res);
+    }).catch(err => {
+      console.log(err);
+    });
+    
+    ;
+      });
+useEffect(() => {
+ Api.getQuestions().then((res) => {
+   console.log("res",res
+   );
+  setQuestions(res.question);
+ })
+}, [])
   return (
     <>
       {!fullScreen ? (
@@ -66,18 +103,7 @@ export default function Assesment() {
               </div>
             </div>
             <div className="assessment_question_container">
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
-              <RadioQuestion />
+              <RadioQuestion data={question} addfun={submitSingleQuestion}/>
             </div>
           </div>
         </div>
