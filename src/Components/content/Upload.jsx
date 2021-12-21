@@ -3,7 +3,7 @@ import "./Upload.css";
 
 function Upload() {
     return (
-        <div>
+        <div className='maincontent'>
              <div class="cardup">
       <h3></h3>
       <h2>Coming Soon..!</h2>

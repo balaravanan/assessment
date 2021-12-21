@@ -5,10 +5,10 @@ import file from "../images/file.png";
 import browser from "../images/upload-file.png";
 import user from "../images/user.png";
 import "@coreui/coreui/dist/css/coreui.min.css";
-// import { useHistory } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 
 function Sidehire() {
-  const history = useHistory("");
+  const navigate  = useNavigate ("");
 
   const [dash, setDash] = useState(false);
   const [task, setTask] = useState(false);
@@ -22,7 +22,7 @@ function Sidehire() {
     setPort(false);
     setBowser(false);
     setUse(false);
-    history.push("/admin/dashboard");
+    navigate("/admin/dashboard");
   };
 
   const ask = () => {
@@ -31,7 +31,7 @@ function Sidehire() {
     setPort(false);
     setBowser(false);
     setUse(false);
-    history.push("/task");
+    navigate("/task");
   };
   const trop = () => {
     setDash(false);
@@ -39,7 +39,7 @@ function Sidehire() {
     setPort(true);
     setBowser(false);
     setUse(false);
-    history.push("/sa");
+    navigate("/sa");
   };
 
   const reswob = () => {
@@ -48,7 +48,7 @@ function Sidehire() {
     setPort(false);
     setBowser(true);
     setUse(false);
-    history.push("/contuploa");
+    navigate("/contuploa");
   };
 
   const resu = () => {
@@ -57,7 +57,7 @@ function Sidehire() {
     setPort(false);
     setBowser(false);
     setUse(true);
-    history.push("/ga");
+    navigate("/ga");
   };
   return (
     <div>

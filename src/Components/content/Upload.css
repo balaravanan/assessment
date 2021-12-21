@@ -1,11 +1,12 @@
 .cardup {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-    padding: 16px;
-    text-align: center;
-    background-color: #f1f1f1;
     background: linear-gradient(to bottom, rgb(132, 216, 93) 0, rgb(119, 219, 110) 50%, #094a88 51%, #094a88 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: 30%;
-    margin-left: 20%;
+    margin-top: 10em;
+    margin-left: 25em;
+  }
+
+  .maincontent{
+    height: 30em;
   }

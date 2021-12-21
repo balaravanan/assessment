@@ -46,14 +46,5 @@ export default {
     });
     return response.data;
   },
-  // user_type_dropdown: async (data) => {
-  //   const response = await axios.get(`${url}/user/admin/allUserType`, {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: localStorage.getItem("token"),
-  //     },
-  //     data,
-  //   });
-  //   return response.data;
-  // },
+
 };

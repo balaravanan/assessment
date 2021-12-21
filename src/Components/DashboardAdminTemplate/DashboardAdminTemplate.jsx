@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect,useContext } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import "./DashboardAdminTemplate.css";
 import dashboard from "../../images/dashboard(1).png";
-import Content from "../content/Content";
 import AddingUser from "../AddingUser/AddingUser";
 import report from "../../images/report(1).png";
 import file from "../../images/file.png";
 import browser from "../../images/upload-file.png";
-import user from "../../images/user.png";
+import accountImg from "../../images/user.png";
 import Dashboard from "../Dashboard/Dashboard";
-// import { useHistory, useParams, useLocation } from "react-router-dom";
 import Managetask from "../taskmangaement/Managetask";
+import { UserContext } from "../../App";
+
 export default function DashboardAdminTemplate(props) {
   let navigate = useNavigate();
   const [dash, setDash] = useState(true);
@@ -19,6 +18,8 @@ export default function DashboardAdminTemplate(props) {
   const [port, setPort] = useState(false);
   const [bowser, setBowser] = useState(false);
   const [use, setUse] = useState(false);
+  const [user, setUser] = useContext(UserContext);
+  const [logout, setLogout] = useState(false);
   const dashboardActive = () => {
     navigate("/admin/dashboard");
     setDash(true);
@@ -28,10 +29,6 @@ export default function DashboardAdminTemplate(props) {
     setUse(false);
   };
   const taskmanagementActive = () => {
-    // history.push({
-    //   pathname: "/admin/taskmanagement",
-    //   state: "taskmanagement",
-    // });
     navigate("/admin/taskmanager");
     setDash(false);
     setTask(true);
@@ -40,6 +37,7 @@ export default function DashboardAdminTemplate(props) {
     setUse(false);
   };
   const reportActive = () => {
+    navigate("/admin/report");
     setDash(false);
     setTask(false);
     setPort(true);
@@ -47,6 +45,7 @@ export default function DashboardAdminTemplate(props) {
     setUse(false);
   };
   const contentActive = () => {
+    navigate("/admin/upload");
     setDash(false);
     setTask(false);
     setPort(false);
@@ -54,6 +53,7 @@ export default function DashboardAdminTemplate(props) {
     setUse(false);
   };
   const accountActive = () => {
+    navigate("/admin/addAccount");
     setDash(false);
     setTask(false);
     setPort(false);
@@ -133,7 +133,7 @@ export default function DashboardAdminTemplate(props) {
                 style={{
                   opacity: use ? 1 : 0.5,
                 }}
-                src={user}
+                src={accountImg}
                 alt=""
                 width={25}
               />
@@ -147,7 +147,7 @@ export default function DashboardAdminTemplate(props) {
               Welcome to Dashboard
             </div>
             <div className="dashboardadmintemplate_navbar_header2">
-              User name
+              {user.userName}
             </div>
           </div>
           <div className="dashboardadmintemplate_content">

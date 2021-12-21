@@ -2,11 +2,12 @@ import React, { useState, useContext } from "react";
 import Logo from "./Logo";
 import "./Login.css";
 import Api from "../../auth/ApiService";
-// import { useHistory } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { UserContext } from "../../App";
+
 function Login() {
-  // const history = useHistory();
+  const navigate  = useNavigate ();
   const [user, setUser] = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +21,7 @@ function Login() {
       draggable: true,
       progress: undefined,
     });
+
 
   const loginFail = () =>
     toast.error("Please Enter your Correct Email or Password", {
@@ -43,11 +45,11 @@ function Login() {
         setUser(response.user);
         setTimeout(() => {
           if (response.user.userTypeId.userType === "trainee") {
-            history.push("/trainee/dashboard");
+            navigate("/trainee/dashboard");
           } else if (response.user.userTypeId.userType === "admin") {
-            history.push("/admin/dashboard");
+            navigate("/admin/dashboard");
           } else if (response.user.userTypeId.userType === "candidate") {
-            history.push("/trainer/dashboard");
+            navigate("/trainer/dashboard");
           }
         }, 2000);
       })

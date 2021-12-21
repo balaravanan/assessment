@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+
+/* .Test_page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--cui-card-bg,#fff);
+    background-clip: border-box;
+    border: 1px solid var(--cui-card-border-color,rgba(0,0,21,.125));
+    border-radius: 0.25rem;
+} */
+
+.dashboard_container {
+  padding: 3%;
+}
+
+.dashboard_dashboard_heading {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  /* text-align: left; */
+  user-select: none;
+  /* margin-top: 3%; */
+}
+/* 
+.column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    height: 300px; 
+  }
+  
+  Clear floats after the columns 
+
+   .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+
+ .home_icons {
+   display: flex;
+   justify-content: center;
+   margin-top: 5%;
+ }
+
+ .text-align-center {
+   text-align: center!important;
+   margin-top: 5%;
+ }
+
+ .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  width: 25%;
+}
